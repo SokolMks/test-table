@@ -40,19 +40,13 @@ function pagination(numb = 1) {
 
 function buildTable(sorted, num) {
   let pageData = pagination(num);
-
   if(sorted != undefined) {
-    if(sorted.length != 120){
-      pageRow.classList.add('visually-hidden');
       tableContent.innerHTML = '';
       tableContent.insertAdjacentHTML('beforeend', tableItem(sorted));
-    } else {
       if(pageRow.classList.contains('visually-hidden')) {
         pageRow.classList.remove('visually-hidden');
       }
-      tableContent.innerHTML = '';
-      tableContent.insertAdjacentHTML('beforeend', tableItem(pageData.trimmedData));
-    }
+      pageRow.classList.add('visually-hidden');
   } else {
     if(pageRow.classList.contains('visually-hidden')) {
         pageRow.classList.remove('visually-hidden');
@@ -80,7 +74,7 @@ function sortInfo(e) {
     changeData.setAttribute('data-order', 'asc');
     searchResult.fetchResult().then(response => {
      response.sort((a,b) => a[column] > b[column] ? 1 : -1);
-     buildTable(response);
+      buildTable(response);
     })
   } else {
     changeData.setAttribute('data-order', 'desc');
