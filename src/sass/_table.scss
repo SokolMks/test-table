@@ -1,5 +1,8 @@
 .table-list {
   margin-top: 40px;
+  margin-right: 0px;
+  table-layout: auto;
+  width: 100%;
   text-align: center;
   background-color: rgba(185, 182, 182, 0.568);
   border: 1px solid rgb(0, 0, 0);
@@ -9,33 +12,35 @@ table {
 }
 .table-headers {
   border: 1px solid black;
-
 }
 th {
   background-color: white;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-size: 14px;
 }
 td {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+}
+tr {
+  display: table-row;
 }
 .table-content {
-  
-  tr:last-child{
-    td{
+  tr:last-child {
+    td {
       padding-bottom: 10px;
     }
   }
-   tr:nth-child(odd) {
+  tr:nth-child(odd) {
     background-color: rgba(209, 179, 179, 0.671);
   }
-  
-   tr:nth-child(even) {
+
+  tr:nth-child(even) {
     background-color: rgba(180, 167, 167, 0.849);
   }
-
 }
