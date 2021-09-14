@@ -40,8 +40,7 @@ function pagination(numb = 1) {
 
 function buildTable(sorted, num) {
   let pageData = pagination(num);
-  console.log(sorted);
-  
+
   if(sorted != undefined) {
     if(sorted.length != 120){
       pageRow.classList.add('visually-hidden');
@@ -55,6 +54,9 @@ function buildTable(sorted, num) {
       tableContent.insertAdjacentHTML('beforeend', tableItem(pageData.trimmedData));
     }
   } else {
+    if(pageRow.classList.contains('visually-hidden')) {
+        pageRow.classList.remove('visually-hidden');
+      }
     tableContent.innerHTML = '';
     tableContent.insertAdjacentHTML('beforeend', tableItem(pageData.trimmedData));
   }
@@ -92,7 +94,6 @@ function sortInfo(e) {
 function searchUser(e) {
   const searchInput = e.target.value.toLowerCase();
   const apiResult = searchResult.fetchResult();
-  console.log(searchInput.length);
   
   apiResult.then(datas => {
     let filteredApi = [];
@@ -137,6 +138,7 @@ function filterByStates(e) {
         selectedOption.push(data);
       }
     }
+    console.log(selectOption.length);
     if(selectOption.length === 0) {
       buildTable();
     } else {
@@ -157,16 +159,9 @@ function createButtons() {
 }
 
 function changePage(e) {
-  console.log(typeof(e.target.value)); 
-  //console.log(currentPage);
-  //console.log(e.target.parentNode);
-  //e.target.classList.add('active');
   if(typeof(e.target.value) === "string"){
     buildTable(undefined, e.target.value);
-  }
-  //if(e.target)
-  
-  
+  } 
 }
 
 
