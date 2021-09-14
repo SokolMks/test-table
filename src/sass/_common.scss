@@ -1,0 +1,27 @@
+.container {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+ul{
+  list-style: none;
+}
+body {
+  background-color: rgba(194, 192, 192, 0.521);
+}
+
+.active {
+  background-color: green;
+}
+
+.pagination {
+  display: flex;
+  ul {
+    padding: 0;
+  }
+}
+
+.visually-hidden {
+  display: none;
+}

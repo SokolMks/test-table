@@ -1,0 +1,7 @@
+[data-order = "desc"]::after {
+  content: "▲";
+} 
+
+[data-order = "asc"]::after {
+  content: "▼";
+}

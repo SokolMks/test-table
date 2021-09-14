@@ -1,0 +1,21 @@
+.additional-info {
+  display: flex;
+  ul {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+  }
+}
+
+.list-item {
+  padding-bottom: 10px;
+  span {
+    font-weight: bold;
+  }
+  &:first-child {
+    color: red;
+    font-size: 20px;
+  }
+}
