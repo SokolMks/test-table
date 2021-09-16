@@ -158,9 +158,6 @@ function filterByStates(e) {
 //   } 
 // }
 
-
-
-
 function clearHtml() {
   displayInformation.innerHTML = '';
 }
